@@ -17,7 +17,8 @@
 
         var form=document.getElementById("userForm");
         form.addEventListener("submit",async function(element){
-         element.preventDefault();
+        
+                 element.preventDefault();
          const keywords = element.target.keyword.value;
          var url=`https://api.jikan.moe/v3/search/anime?q=${keywords}`
          console.log(keywords)
@@ -41,12 +42,12 @@
        
 
         for(i=0;i<data.length;i++){
-            var  date= (data[i].start_date).split("T")[0].split("-");
-          var dates=(date[2]+"-"+date[1]+"-"+date[0])
+            var  dates= (data[i].start_date)
+           console.log(dates)
 
         //    end dates
-        var  date1= (data[i].end_date).split("T")[0].split("-");
-          var date2=(date[2]+"-"+date[1]+"-"+date[0])
+        var  date2= (data[i].end_date)
+        
             console.log(dates)
             var imdb=(data[i].score)
             console.log(imdb)
